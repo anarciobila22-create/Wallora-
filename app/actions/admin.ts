@@ -70,7 +70,7 @@ export async function uploadWallpaper(_prev: unknown, formData: FormData) {
   if (!validCategory) return { error: 'Escolhe uma categoria válida.' }
   if (!file || file.size === 0) return { error: 'Seleciona uma imagem.' }
   if (!file.type.startsWith('image/')) return { error: 'O ficheiro tem de ser uma imagem.' }
-  if (file.size > 15 * 1024 * 1024) return { error: 'A imagem não pode exceder 15 MB.' }
+  // Sem limite de tamanho definido pela aplicação.
 
   try {
     const ext = file.name.split('.').pop() || 'jpg'
